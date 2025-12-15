@@ -1,0 +1,23 @@
+services:
+  - type: worker
+    name: ai-script-maker-workers
+    env: node
+    buildCommand: npm install
+    startCommand: npm run workers
+    envVars:
+      - key: GOOGLE_SPREADSHEET_ID
+        sync: false
+      - key: GOOGLE_DRIVE_FOLDER_ID
+        sync: false
+      - key: GOOGLE_SERVICE_ACCOUNT_EMAIL
+        sync: false
+      - key: GOOGLE_PRIVATE_KEY
+        sync: false
+      - key: REDIS_URL
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: ELEVENLABS_API_KEY
+        sync: false
+      - key: ELEVENLABS_VOICE_ID
+        value: W7iR5kTNHozpIl2Jqq15
